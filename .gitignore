@@ -1,0 +1,7 @@
+**/models
+**/models/
+**/node_modules/
+
+**/prompts/
+
+package-lock.json
