@@ -35,6 +35,12 @@ In the 2nd example, a user prompts for example: `Hello, who are you?`
 3. The AI Server will find no function to call, so it sends it to itself again but with a model that is fine-tuned on chat messages
 4. The response is getting sent to the core which then sends the response back to the user's device
 
+## Run it yourself
+Currently the project is not meant to run on your own computer.  
+If you really want to do it, you have to clone the repo, download a Llama-V2 model for function calling and a model for chat messages.  
+Put the models into a folder that can be found by the project and edit the ENV-variable inside the .env file. (I am currently using WizardLM and Llama-2 Function Calling)
+After that you need to write a system prompt per model to improve the output quality and link the file usinge the right ENV-variable.
+
 ## FAQ
 ### Q: Why the Name?
 ---  
