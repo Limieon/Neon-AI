@@ -1,0 +1,14 @@
+{
+	"models": {
+		"chat": {
+			"model": "models/wizardlm-13b-v1.2.Q3_K_M.gguf",
+			"prompt": "prompts/chat.txt",
+			"threads": 4
+		},
+		"function": {
+			"model": "models/llama-2-7b-function-calling.Q3_K_M.gguf",
+			"prompt": "prompts/function.txt",
+			"threads": 4
+		}
+	}
+}
