@@ -36,7 +36,28 @@ export default class LlamaInstance {
 			console.log(`Client connceted to ${this.#name}!`)
 
 			const e = socket.on('message', async (msg) => {
-				socket.send(await this.prompt(msg.toString()))
+				socket.send(
+					JSON.stringify({
+						type: 'start',
+					})
+				)
+
+				await this.#session.prompt(msg.toString(), {
+					onToken: (t: any) => {
+						socket.send(
+							JSON.stringify({
+								type: 'token',
+								data: this.#context.decode(t),
+							})
+						)
+					},
+				})
+
+				socket.send(
+					JSON.stringify({
+						type: 'done',
+					})
+				)
 			})
 
 			socket.once('close', () => {
